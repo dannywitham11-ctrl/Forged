@@ -30,7 +30,7 @@ export default function DrawdownDuringTrade({ trade, executions }: { trade: Trad
   const finalMfe = trade.mfe_pnl ?? bestSoFar
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-72">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-72">
       <div className="flex items-center justify-between mb-2">
         <div className="text-sm font-semibold">Trade Drawdown Tracker</div>
         <div className="text-[10px] text-muted">

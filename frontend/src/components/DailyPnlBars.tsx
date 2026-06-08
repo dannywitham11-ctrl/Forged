@@ -3,7 +3,7 @@ import { DailyPnl, fmtUsd } from '../lib/api'
 
 export default function DailyPnlBars({ data }: { data: DailyPnl[] }) {
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-72">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-72">
       <div className="text-sm font-semibold mb-2">Daily Net P&amp;L</div>
       <ResponsiveContainer width="100%" height="88%">
         <BarChart data={data} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>

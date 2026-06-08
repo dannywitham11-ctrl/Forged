@@ -87,7 +87,7 @@ export default function Upload({ onUploaded }: { onUploaded: () => void }) {
         </div>
       )}
 
-      <div className="bg-panel border border-border rounded-lg overflow-hidden">
+      <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
         <div className="flex border-b border-border">
           <button onClick={() => setHelpFor('sierra')}
             className={`px-4 py-2.5 text-sm border-r border-border transition ${
@@ -174,7 +174,7 @@ export default function Upload({ onUploaded }: { onUploaded: () => void }) {
 
       <div>
         <div className="text-sm font-semibold mb-2">Recent uploads</div>
-        <div className="bg-panel border border-border rounded-lg overflow-hidden">
+        <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
           <table className="w-full text-sm">
             <thead className="text-xs uppercase text-muted bg-panel2">
               <tr>

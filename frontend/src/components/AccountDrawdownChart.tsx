@@ -22,7 +22,7 @@ export default function AccountDrawdownChart({ accountId }: { accountId: number 
   if (!data || !meta) return null
   if (data.length === 0 || meta.dd === 0) {
     return (
-      <div className="bg-panel border border-border rounded-lg p-4 h-64 flex items-center justify-center">
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-64 flex items-center justify-center">
         <div className="text-sm text-muted text-center">
           {meta.dd === 0 ? 'No drawdown configured on this account.' : 'No trades yet.'}
           <div className="text-xs opacity-60 mt-1">Apply a prop firm preset on the Prop Firms page.</div>
@@ -39,7 +39,7 @@ export default function AccountDrawdownChart({ accountId }: { accountId: number 
   const maxVal = Math.max(...data.map(p => p.equity), meta.starting + meta.target) + 200
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="flex items-center justify-between mb-2">
         <div className="text-sm font-semibold">Drawdown Curve · {meta.mode}</div>
         <div className="text-[10px] text-muted">

@@ -58,7 +58,7 @@ export default function PayoutsCalendar({ accounts }: { accounts: Account[] }) {
 
   if (!items.length) {
     return (
-      <div className="bg-panel border border-border rounded-lg p-6 text-center text-muted text-sm">
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-6 text-center text-muted text-sm">
         No payouts recorded or predicted. Record a payout above or apply a prop firm preset to start forecasting.
       </div>
     )
@@ -69,7 +69,7 @@ export default function PayoutsCalendar({ accounts }: { accounts: Account[] }) {
   const totalUpcoming = items.filter(i => !i.recorded).reduce((s, i) => s + i.amount, 0)
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="flex items-center justify-between mb-3">
         <div>
           <div className="text-sm font-semibold">Payouts Calendar</div>

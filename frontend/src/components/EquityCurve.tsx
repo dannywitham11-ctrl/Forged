@@ -8,7 +8,7 @@ export default function EquityCurve({ data }: { data: EquityPoint[] }) {
     label: new Date(d.t).toLocaleDateString(),
   }))
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-80">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-80">
       <div className="text-sm font-semibold mb-2">Equity Curve</div>
       <ResponsiveContainer width="100%" height="90%">
         <AreaChart data={chartData}>

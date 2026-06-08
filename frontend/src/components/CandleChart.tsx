@@ -164,7 +164,7 @@ export default function CandleChart({ trade, executions }: { trade: Trade; execu
   if (executions.length === 0) return null
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
         <div>
           <div className="text-sm font-semibold flex items-center gap-2">

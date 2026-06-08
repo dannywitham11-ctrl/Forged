@@ -100,12 +100,12 @@ export default function Accounts({ accounts, onChange }: { accounts: Account[]; 
             onChange={onChange} />
         ))}
         {!accounts.length && (
-          <div className="bg-panel border border-border rounded-lg p-6 text-center text-muted">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-6 text-center text-muted">
             No accounts yet — upload a Sierra export to create one.
           </div>
         )}
         {accounts.length > 0 && !visibleAccounts.length && (
-          <div className="bg-panel border border-border rounded-lg p-6 text-center text-muted">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-6 text-center text-muted">
             All {blownCount} account{blownCount === 1 ? '' : 's'} are blown and hidden.{' '}
             <button onClick={() => setHideBlown(false)} className="text-accent hover:underline">Show them</button>.
           </div>
@@ -134,7 +134,7 @@ function SummaryCard({ a, onEdit, onMarkBlown, onReset, onDelete, onRegenerateNa
   const blown = a.status === 'blown'
 
   return (
-    <div className={`bg-panel border rounded-lg p-4 ${blown ? 'border-loss/40' : 'border-border'}`}>
+    <div className={`glass-panel hover-lift border rounded-lg p-4 ${blown ? 'border-loss/40' : 'border-border'}`}>
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2 flex-wrap">
@@ -267,7 +267,7 @@ function EditCard({ firms, form, setForm, onCancel, onSave, onApplyPreset }: {
   const selectedFirm = firms.find(f => f.key === presetFirm)
 
   return (
-    <div className="bg-panel border border-accent/40 rounded-lg p-5 space-y-4">
+    <div className="glass-panel hover-lift border border-accent/40 rounded-lg p-5 space-y-4">
       <div className="bg-panel2/40 border border-border rounded-lg p-3 flex flex-col md:flex-row md:items-end gap-3">
         <div className="flex-1">
           <label className="text-xs text-muted">Quick-apply prop firm preset</label>

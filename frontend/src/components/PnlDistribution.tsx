@@ -3,7 +3,7 @@ import { PnlBucket } from '../lib/api'
 
 export default function PnlDistribution({ data }: { data: PnlBucket[] }) {
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-64">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-64">
       <div className="text-sm font-semibold mb-2">Trade P&amp;L Distribution</div>
       <ResponsiveContainer width="100%" height="88%">
         <BarChart data={data}>

@@ -7,7 +7,7 @@ const DOW = ['S','M','T','W','T','F','S']
 export default function PnLCalendar({ data }: { data: DailyPnl[] }) {
   if (!data.length) {
     return (
-      <div className="bg-panel border border-border rounded-lg p-4">
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
         <div className="text-sm font-semibold mb-2">Daily P&amp;L</div>
         <div className="text-sm text-muted">No trades yet.</div>
       </div>
@@ -23,7 +23,7 @@ export default function PnLCalendar({ data }: { data: DailyPnl[] }) {
   const maxAbs = Math.max(1, ...data.map(d => Math.abs(d.net_pnl)))
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="text-sm font-semibold mb-3">Daily P&amp;L Calendar</div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {months.map((m) => (

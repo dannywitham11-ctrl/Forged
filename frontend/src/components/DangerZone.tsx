@@ -25,7 +25,7 @@ export default function DangerZone({ onReset }: { onReset: () => void }) {
   }
 
   return (
-    <div className="bg-panel border border-loss/40 rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-loss/40 rounded-lg p-4">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-sm font-semibold text-loss">Danger Zone</div>

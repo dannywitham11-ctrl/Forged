@@ -82,7 +82,7 @@ export default function TradeDetailModal({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-start justify-center z-50 p-4 overflow-auto" onClick={onClose}>
-      <div className="bg-panel border border-border rounded-lg w-full max-w-5xl my-8" onClick={e => e.stopPropagation()}>
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg w-full max-w-5xl my-8" onClick={e => e.stopPropagation()}>
         <div className="p-5 border-b border-border flex items-start justify-between">
           <div>
             <div className="flex items-center gap-3 flex-wrap">

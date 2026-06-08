@@ -62,7 +62,7 @@ export default function MarketData() {
 
   return (
     <div className="p-6 space-y-6 max-w-5xl">
-      <div className="bg-panel border border-border rounded-lg p-4">
+      <div className="glass-panel hover-lift border border-border rounded-lg p-4">
         <div className="text-sm font-semibold mb-1">Market Data — OHLC bar cache</div>
         <div className="text-xs text-muted leading-relaxed">
           Three ways to load real candle data so the trade chart shows actual market action:
@@ -87,7 +87,7 @@ export default function MarketData() {
         </div>
       </div>
 
-      <div className="bg-panel border border-border rounded-lg p-5 space-y-3">
+      <div className="glass-panel hover-lift border border-border rounded-lg p-5 space-y-3">
         <div className="text-sm font-semibold">Upload bars</div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
           <div>
@@ -135,7 +135,7 @@ export default function MarketData() {
       <div>
         <div className="text-sm font-semibold mb-2">Sierra Data folder</div>
         {!sierra?.mounted ? (
-          <div className="bg-panel border border-border rounded-lg p-4 text-xs text-muted leading-relaxed">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-4 text-xs text-muted leading-relaxed">
             <div className="text-text font-medium mb-1">Not mounted (optional)</div>
             To browse and bulk-import directly from your Sierra Chart Data folder, add this to
             <code className="bg-bg px-1 mx-1 rounded">.env</code> and restart:
@@ -144,7 +144,7 @@ export default function MarketData() {
             The folder is mounted read-only — your files won't be touched.
           </div>
         ) : (
-          <div className="bg-panel border border-border rounded-lg overflow-hidden">
+          <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
             <div className="px-4 py-2 text-xs text-muted border-b border-border">
               Mounted: <code className="text-text">{sierra.path}</code> · {sierra.files.length} .scid files
             </div>
@@ -187,7 +187,7 @@ export default function MarketData() {
 
       <div>
         <div className="text-sm font-semibold mb-2">Cached bars</div>
-        <div className="bg-panel border border-border rounded-lg overflow-hidden">
+        <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-panel2 text-xs uppercase text-muted">
               <tr>

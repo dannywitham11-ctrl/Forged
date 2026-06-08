@@ -72,7 +72,7 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
   if (c.trade_count === 0) {
     return (
       <div className="p-6">
-        <div className="bg-panel border border-border rounded-lg p-8 text-center">
+        <div className="glass-panel hover-lift border border-border rounded-lg p-8 text-center">
           <div className="text-lg font-medium mb-1">No trades yet</div>
           <div className="text-muted text-sm">Upload a Sierra Chart Trade Activity Log on the Upload page to get started.</div>
         </div>
@@ -91,7 +91,7 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
 
   return (
     <div className="p-6 space-y-5">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0ms' }}>
         <div className="lg:col-span-1">
           <HeroCard
             netPnl={c.net_pnl}
@@ -111,7 +111,7 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in" style={{ animationDelay: '50ms', animationFillMode: 'both' }}>
         <WinRateCard title="Trade Win %" rate={c.win_rate}
           wins={c.win_count} losses={c.loss_count} breakevens={c.breakeven_count} subLabel="trades" />
         <ProfitFactorCard value={c.profit_factor} />
@@ -131,7 +131,7 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
 
       <PropFirmPanel accounts={visibleAccounts} />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'both' }}>
         <MetricTile label="Max Drawdown" value={fmtUsd(c.max_drawdown)}
           sub={c.max_drawdown_pct ? `${fmtPct(c.max_drawdown_pct, 1)} from peak` : 'from peak'} tone="loss" />
         <MetricTile label="Expectancy" value={fmtUsd(c.expectancy, { signed: true })}
@@ -158,12 +158,12 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
           tone={(c.avg_realized_r ?? 0) > 0 ? 'win' : (c.avg_realized_r ?? 0) < 0 ? 'loss' : 'neutral'} />
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '150ms', animationFillMode: 'both' }}>
         <div className="xl:col-span-2"><EquityCurve data={stats.equity_curve} /></div>
         <DrawdownChart data={stats.drawdown_curve} />
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
         <div className="xl:col-span-2"><DailyPnlBars data={stats.daily} /></div>
         <PnlDistribution data={stats.pnl_distribution} />
       </div>
@@ -172,7 +172,7 @@ export default function Dashboard({ accountIds, accounts }: { accountIds?: numbe
 
       <PnLCalendar data={stats.daily} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 animate-fade-in" style={{ animationDelay: '250ms', animationFillMode: 'both' }}>
         <BreakdownBars title="By Symbol" rows={stats.by_symbol} />
         <BreakdownBars title="By Side" rows={stats.by_side} />
         <BreakdownBars title="By Strategy" rows={stats.by_strategy} />

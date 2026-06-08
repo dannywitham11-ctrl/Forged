@@ -22,7 +22,7 @@ export default function PayoutForecastWidget() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-2">
         {data.buckets.map(b => (
-          <div key={b.label} className="bg-panel border border-border rounded-md p-2.5">
+          <div key={b.label} className="bg-panel glass-panel hover-lift border border-border rounded-md p-2.5">
             <div className="text-[10px] text-muted uppercase tracking-wider">{b.label}</div>
             <div className={`num font-semibold mt-1 ${b.total > 0 ? 'text-win' : 'text-muted'}`}>
               {b.total > 0 ? fmtUsd(b.total) : '—'}

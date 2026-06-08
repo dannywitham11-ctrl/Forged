@@ -99,7 +99,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen overflow-hidden bg-bg text-text">
+    <div className="flex h-screen overflow-hidden bg-transparent text-text">
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-black/60 z-40 md:hidden"
           onClick={() => setMobileMenuOpen(false)} />
@@ -107,7 +107,7 @@ export default function App() {
 
       <aside className={`
         fixed md:static inset-y-0 left-0 z-50
-        w-64 md:w-56 shrink-0 border-r border-border bg-panel flex flex-col
+        w-64 md:w-56 shrink-0 border-r border-border glass-panel flex flex-col
         transition-transform duration-200
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
@@ -139,7 +139,7 @@ export default function App() {
       </aside>
 
       <main className="flex-1 flex flex-col min-w-0">
-        <header className="sticky top-0 z-30 h-14 border-b border-border bg-panel/95 backdrop-blur flex items-center px-3 sm:px-6 gap-2 sm:gap-4">
+        <header className="sticky top-0 z-30 h-14 border-b border-border glass-panel flex items-center px-3 sm:px-6 gap-2 sm:gap-4">
           <button onClick={() => setMobileMenuOpen(true)}
             className="md:hidden p-2 -ml-2 text-muted hover:text-text"
             aria-label="Open menu">

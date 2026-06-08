@@ -64,7 +64,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
         <div className="text-sm font-semibold mb-3">Upcoming Payouts</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {Object.values(statuses).filter(s => s.payout_max_for_next > 0 || s.payout_min > 0).map(s => (
-            <div key={s.account_id} className={`bg-panel border rounded-lg p-4 ${s.eligible_for_payout ? 'border-accent/60' : 'border-border'}`}>
+            <div key={s.account_id} className={`glass-panel hover-lift border rounded-lg p-4 ${s.eligible_for_payout ? 'border-accent/60' : 'border-border'}`}>
               <div className="flex items-center justify-between mb-1.5 gap-2 flex-wrap">
                 <div className="text-sm font-medium">{acctMap[s.account_id]?.display_name}</div>
                 <div className="flex gap-1.5">
@@ -117,7 +117,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
           ))}
         </div>
         {!Object.values(statuses).filter(s => s.payout_max_for_next > 0 || s.payout_min > 0).length && (
-          <div className="bg-panel border border-border rounded-lg p-4 text-sm text-muted">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-4 text-sm text-muted">
             {payoutAccounts.length === 0
               ? 'No active PA / funded accounts. Mark an account type as "pa" or "funded" to see payouts here.'
               : 'Apply a prop firm preset on an account to see payout predictions here.'}
@@ -129,7 +129,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
         <div>
           <div className="text-sm font-semibold mb-2">Total Payouts</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div className="bg-panel border border-accent/40 rounded-lg p-3">
+            <div className="glass-panel hover-lift border border-accent/40 rounded-lg p-3">
               <div className="text-[10px] text-muted uppercase tracking-wider">All accounts</div>
               <div className="text-2xl font-bold text-win num">{fmtUsd(totalPaid)}</div>
               <div className="text-[10px] text-muted">{payouts.length} payouts</div>
@@ -137,7 +137,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
             {Object.entries(totalByAccount).map(([aid, total]) => {
               const count = payouts.filter(p => p.account_id === Number(aid)).length
               return (
-                <div key={aid} className="bg-panel border border-border rounded-lg p-3">
+                <div key={aid} className="glass-panel hover-lift border border-border rounded-lg p-3">
                   <div className="text-[10px] text-muted uppercase tracking-wider truncate">{acctMap[Number(aid)]?.display_name}</div>
                   <div className="text-xl font-semibold text-win num">{fmtUsd(total)}</div>
                   <div className="text-[10px] text-muted">{count} payout{count !== 1 ? 's' : ''}</div>
@@ -157,7 +157,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
           )}
         </div>
         {creating && (
-          <div className="bg-panel border border-border rounded-lg p-4 mb-3 grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-4 mb-3 grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
             <div>
               <label className="text-xs text-muted">Account</label>
               <select value={form.account_id} onChange={e => setForm({ ...form, account_id: Number(e.target.value) })}
@@ -183,7 +183,7 @@ export default function Payouts({ accounts }: { accounts: Account[] }) {
               placeholder="Notes (optional)" className="md:col-span-4 bg-panel2 border border-border rounded px-2 py-1.5 text-sm" />
           </div>
         )}
-        <div className="bg-panel border border-border rounded-lg overflow-hidden">
+        <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-panel2 text-xs uppercase text-muted">
               <tr>

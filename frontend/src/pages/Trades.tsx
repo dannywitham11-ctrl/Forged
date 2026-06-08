@@ -42,7 +42,7 @@ export default function Trades({ accountIds }: { accountIds?: number[] }) {
               className="accent-loss" />
             With mistakes only
           </label>
-          <div className="flex gap-1 bg-panel border border-border rounded-md p-1 text-xs">
+          <div className="flex gap-1 glass-panel hover-lift border border-border rounded-md p-1 text-xs">
             {(['all','wins','losses'] as const).map(f => (
               <button key={f} onClick={() => setFilter(f)}
                 className={`px-3 py-1 rounded ${filter === f ? 'bg-panel2 text-text' : 'text-muted hover:text-text'}`}>{f}</button>
@@ -52,7 +52,7 @@ export default function Trades({ accountIds }: { accountIds?: number[] }) {
       </div>
 
       {loading ? <div className="text-muted">Loading…</div> : (
-        <div className="overflow-auto bg-panel border border-border rounded-lg">
+        <div className="overflow-auto glass-panel hover-lift border border-border rounded-lg">
           <table className="w-full text-sm">
             <thead className="bg-panel2 text-xs uppercase text-muted">
               <tr>

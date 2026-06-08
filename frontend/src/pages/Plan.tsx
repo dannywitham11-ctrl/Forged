@@ -58,7 +58,7 @@ export default function Plan() {
         )}
       </section>
 
-      <section className={`bg-panel border rounded-lg p-5 ${summary.dd_alert_breached ? 'border-loss/60' : 'border-border'}`}>
+      <section className={`glass-panel hover-lift border rounded-lg p-5 ${summary.dd_alert_breached ? 'border-loss/60' : 'border-border'}`}>
         <div className="flex items-center justify-between mb-3">
           <div>
             <div className="text-sm font-semibold">Drawdown Protection</div>
@@ -101,7 +101,7 @@ export default function Plan() {
               onCancel={() => setEditingPlaybook(null)}
               onDelete={async () => { if (!confirm('Delete?')) return; await api.playbooks.delete(pb.id); setEditingPlaybook(null); refresh() }} />
           ) : (
-            <div key={pb.id} className="bg-panel border border-border rounded-lg p-4">
+            <div key={pb.id} className="glass-panel hover-lift border border-border rounded-lg p-4">
               <div className="flex items-baseline justify-between">
                 <div className="font-semibold">{pb.name}</div>
                 <span className="text-[10px] uppercase bg-panel2 px-1.5 py-0.5 rounded text-muted">{pb.account_group}</span>
@@ -119,7 +119,7 @@ export default function Plan() {
             </div>
           ))}
           {!playbooks.length && !creatingPlaybook && (
-            <div className="bg-panel border border-border rounded-lg p-6 text-center text-sm text-muted md:col-span-2 lg:col-span-3">
+            <div className="glass-panel hover-lift border border-border rounded-lg p-6 text-center text-sm text-muted md:col-span-2 lg:col-span-3">
               No playbooks yet. Create one and assign it to your PA or Eval group in the goals editor above.
             </div>
           )}
@@ -240,7 +240,7 @@ function EtaSection({ title, subtitle, accent, rows, kind }: {
 function Tile({ label, value, tone = 'neutral' }: { label: string; value: string; tone?: 'win'|'loss'|'warn'|'neutral' }) {
   const c = tone === 'win' ? 'text-win' : tone === 'loss' ? 'text-loss' : tone === 'warn' ? 'text-warn' : 'text-text'
   return (
-    <div className="bg-panel border border-border rounded-lg p-3">
+    <div className="glass-panel hover-lift border border-border rounded-lg p-3">
       <div className="text-[10px] text-muted uppercase tracking-wider">{label}</div>
       <div className={`num font-semibold mt-1 ${c}`}>{value}</div>
     </div>
@@ -398,7 +398,7 @@ function PlaybookEditor({ pb, onSave, onCancel, onDelete }: {
     max_trades_per_day: pb?.max_trades_per_day ?? 0, max_loss_per_day: pb?.max_loss_per_day ?? 0,
   })
   return (
-    <div className="bg-panel border border-accent/40 rounded-lg p-4 space-y-3 md:col-span-2 lg:col-span-3">
+    <div className="glass-panel hover-lift border border-accent/40 rounded-lg p-4 space-y-3 md:col-span-2 lg:col-span-3">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <Field label="Name"><input value={f.name} onChange={e => setF({ ...f, name: e.target.value })}
           className="w-full mt-1 bg-bg border border-border rounded px-2 py-1.5 text-sm" /></Field>

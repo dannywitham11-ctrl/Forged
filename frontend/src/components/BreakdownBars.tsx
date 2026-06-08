@@ -3,7 +3,7 @@ import { BreakdownRow, fmtUsd } from '../lib/api'
 export default function BreakdownBars({ title, rows }: { title: string; rows: BreakdownRow[] }) {
   if (!rows.length) {
     return (
-      <div className="bg-panel border border-border rounded-lg p-4">
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
         <div className="text-sm font-semibold mb-2">{title}</div>
         <div className="text-sm text-muted">No data.</div>
       </div>
@@ -11,7 +11,7 @@ export default function BreakdownBars({ title, rows }: { title: string; rows: Br
   }
   const max = Math.max(1, ...rows.map(r => Math.abs(r.net_pnl)))
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="text-sm font-semibold mb-3">{title}</div>
       <div className="space-y-1.5">
         {rows.map(r => {

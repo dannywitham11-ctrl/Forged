@@ -8,7 +8,7 @@ export default function MetricTile({
     tone === 'loss' ? 'text-loss' :
     tone === 'warn' ? 'text-warn' : 'text-text'
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="text-[11px] text-muted uppercase tracking-wider">{label}</div>
       <div className={`mt-1.5 text-xl font-semibold num ${color}`}>{value}</div>
       {sub && <div className="text-[11px] text-muted mt-1 num">{sub}</div>}

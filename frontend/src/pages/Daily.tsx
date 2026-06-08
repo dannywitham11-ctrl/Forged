@@ -51,7 +51,7 @@ export default function Daily({ accountIds }: { accountIds?: number[] }) {
 
   return (
     <div className="p-6 grid grid-cols-1 lg:grid-cols-4 gap-5">
-      <aside className="bg-panel border border-border rounded-lg p-3 lg:max-h-[80vh] lg:overflow-auto">
+      <aside className="glass-panel hover-lift border border-border rounded-lg p-3 lg:max-h-[80vh] lg:overflow-auto">
         <div className="text-xs uppercase tracking-wider text-muted mb-2 px-1">{daily.length} trading days</div>
         <div className="space-y-0.5">
           {[...daily].reverse().map(d => {
@@ -121,7 +121,7 @@ export default function Daily({ accountIds }: { accountIds?: number[] }) {
                 value={String(selectedTrades.reduce((a, t) => a + t.quantity, 0))} />
             </div>
 
-            <div className="bg-panel border border-border rounded-lg overflow-hidden">
+            <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
               <div className="px-4 py-2.5 border-b border-border text-sm font-semibold">
                 Trades on this day
               </div>
@@ -170,7 +170,7 @@ export default function Daily({ accountIds }: { accountIds?: number[] }) {
             </div>
           </>
         ) : (
-          <div className="bg-panel border border-border rounded-lg p-8 text-center text-muted">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-8 text-center text-muted">
             Pick a day from the list to see all its trades.
           </div>
         )}
@@ -194,7 +194,7 @@ export default function Daily({ accountIds }: { accountIds?: number[] }) {
 function DayCard({ label, value, tone = 'neutral' }: { label: string; value: string; tone?: 'win'|'loss'|'neutral' }) {
   const c = tone === 'win' ? 'text-win' : tone === 'loss' ? 'text-loss' : 'text-text'
   return (
-    <div className="bg-panel border border-border rounded-lg p-3">
+    <div className="glass-panel hover-lift border border-border rounded-lg p-3">
       <div className="text-[10px] text-muted uppercase tracking-wider">{label}</div>
       <div className={`text-xl font-semibold num mt-1 ${c}`}>{value}</div>
     </div>

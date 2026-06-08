@@ -44,7 +44,7 @@ export default function SierraBalanceSync({ onUpdated }: { onUpdated: () => void
   }
 
   return (
-    <div className="bg-panel border border-accent/30 rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-accent/30 rounded-lg p-4">
       <div className="flex items-start justify-between gap-3 flex-wrap">
         <div className="flex-1 min-w-0">
           <div className="text-sm font-semibold">Sync broker balances from Sierra Chart</div>

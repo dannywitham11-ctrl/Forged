@@ -39,7 +39,7 @@ export default function PropFirms({ accounts, onChange }: { accounts: Account[];
 
   return (
     <div className="p-6 space-y-6">
-      <div className="bg-panel border border-border rounded-lg p-4 flex items-start justify-between gap-4">
+      <div className="glass-panel hover-lift border border-border rounded-lg p-4 flex items-start justify-between gap-4">
         <div className="flex-1">
           <div className="text-sm font-semibold mb-1">Prop Firms</div>
           <div className="text-xs text-muted">
@@ -59,7 +59,7 @@ export default function PropFirms({ accounts, onChange }: { accounts: Account[];
       )}
 
       {firms.map(firm => (
-        <div key={firm.id} className="bg-panel border border-border rounded-lg overflow-hidden">
+        <div key={firm.id} className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
           {editingFirm === firm.id ? (
             <FirmEditor firm={firm}
               onSave={async (data) => { await api.propFirms.update(firm.id, data); setEditingFirm(null); refresh() }}

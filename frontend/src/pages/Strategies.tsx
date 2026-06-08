@@ -36,7 +36,7 @@ export default function Strategies() {
       </div>
 
       {creating && (
-        <div className="bg-panel border border-border rounded-lg p-4 mb-4 space-y-3">
+        <div className="glass-panel hover-lift border border-border rounded-lg p-4 mb-4 space-y-3">
           <input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
             placeholder="Strategy name (e.g. ORB Long, Mean Reversion)"
             className="w-full bg-panel2 border border-border rounded px-3 py-2 text-sm" />
@@ -60,7 +60,7 @@ export default function Strategies() {
         </div>
       )}
 
-      <div className="bg-panel border border-border rounded-lg overflow-hidden">
+      <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
         {strategies.length ? (
           <div className="divide-y divide-border">
             {strategies.map(s => (

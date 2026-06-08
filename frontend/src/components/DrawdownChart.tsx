@@ -4,7 +4,7 @@ import { DrawdownPoint, fmtUsd } from '../lib/api'
 export default function DrawdownChart({ data }: { data: DrawdownPoint[] }) {
   const chartData = data.map((d, i) => ({ idx: i + 1, dd: d.drawdown }))
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-64">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-64">
       <div className="text-sm font-semibold mb-2">Drawdown</div>
       <ResponsiveContainer width="100%" height="88%">
         <AreaChart data={chartData}>

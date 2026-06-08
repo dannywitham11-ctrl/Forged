@@ -33,7 +33,7 @@ export default function TradeChart({ trade, executions }: { trade: Trade; execut
   const isLong = trade.side === 'Long'
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 h-72">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 h-72">
       <div className="flex items-center justify-between mb-2">
         <div className="text-sm font-semibold">Trade Chart</div>
         <div className="text-[10px] text-muted">

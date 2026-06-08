@@ -10,7 +10,7 @@ export default function WinRateCard({
   const lossPct = total ? losses / total : 0
   const bePct = total ? breakevens / total : 0
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="text-xs text-muted uppercase tracking-wider">{title}</div>
       <div className="mt-2 flex items-baseline gap-3">
         <div className="text-3xl font-bold num">{fmtPct(rate, 1)}</div>

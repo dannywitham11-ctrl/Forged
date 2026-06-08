@@ -6,7 +6,8 @@
 html, body, #root { height: 100%; }
 body {
   margin: 0;
-  background-color: #0B0C10;
+  background: linear-gradient(135deg, #1a0b2e 0%, #080a14 50%, #0b1d2e 100%);
+  background-attachment: fixed;
   color: #F1F5F9;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,18 +37,20 @@ body {
 
 /* --- Modern UI Micro-Animations & Glass Effects --- */
 .hover-lift {
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -10px rgba(69, 162, 158, 0.15);
+  box-shadow: 0 10px 20px -10px rgba(0, 229, 229, 0.3);
+  border-color: rgba(0, 229, 229, 0.5);
 }
 
 .glass-panel {
-  background: rgba(18, 20, 26, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(42, 46, 57, 0.5);
+  background: rgba(30, 35, 55, 0.3) !important;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 .animate-fade-in {

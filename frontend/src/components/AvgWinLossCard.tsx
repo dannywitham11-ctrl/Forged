@@ -13,7 +13,7 @@ export default function AvgWinLossCard({
   const tone = payoffRatio >= 2 ? 'win' : payoffRatio >= 1 ? 'warn' : 'loss'
 
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="flex items-baseline justify-between">
         <div className="text-xs text-muted uppercase tracking-wider">Avg Win / Loss</div>
         <div className={`text-[11px] font-medium num ${tone === 'win' ? 'text-win' : tone === 'warn' ? 'text-warn' : 'text-loss'}`}>

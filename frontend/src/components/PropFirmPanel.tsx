@@ -20,7 +20,7 @@ export default function PropFirmPanel({ accounts }: { accounts: Account[] }) {
 
   if (!propAccounts.length) {
     return (
-      <div className="bg-panel border border-border rounded-lg p-4">
+      <div className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4">
         <div className="text-sm font-semibold mb-1">Prop Firm Tracking</div>
         <div className="text-xs text-muted">
           On the <Link to="/prop-firms" className="text-accent hover:underline">Prop Firms</Link> page,
@@ -36,7 +36,7 @@ export default function PropFirmPanel({ accounts }: { accounts: Account[] }) {
       {propAccounts.map(a => {
         const s = statuses[a.id]
         if (!s) return (
-          <div key={a.id} className="bg-panel border border-border rounded-lg p-4 text-sm text-muted">
+          <div key={a.id} className="bg-panel glass-panel hover-lift border border-border rounded-lg p-4 text-sm text-muted">
             Loading {a.display_name}…
           </div>
         )

@@ -155,7 +155,7 @@ export default function Costs({ accounts }: { accounts: Account[] }) {
       {econ && econ.per_account.length > 0 && (
         <div>
           <div className="text-sm font-semibold mb-2">Per-Account Economics</div>
-          <div className="bg-panel border border-border rounded-lg overflow-hidden">
+          <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
             <table className="w-full text-sm">
               <thead className="bg-panel2 text-xs uppercase text-muted">
                 <tr>
@@ -221,7 +221,7 @@ export default function Costs({ accounts }: { accounts: Account[] }) {
             mode={editingId != null ? 'edit' : 'create'}
           />
         )}
-        <div className="bg-panel border border-border rounded-lg overflow-hidden">
+        <div className="glass-panel hover-lift border border-border rounded-lg overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-panel2 text-xs uppercase text-muted">
               <tr>
@@ -273,7 +273,7 @@ export default function Costs({ accounts }: { accounts: Account[] }) {
       {econ && Object.keys(econ.cost_breakdown).length > 0 && (
         <div>
           <div className="text-sm font-semibold mb-2">Cost Breakdown</div>
-          <div className="bg-panel border border-border rounded-lg p-4">
+          <div className="glass-panel hover-lift border border-border rounded-lg p-4">
             <div className="space-y-2">
               {Object.entries(econ.cost_breakdown).sort((a,b) => b[1] - a[1]).map(([k, v]) => {
                 const pct = (v / econ.total_costs) * 100
@@ -306,7 +306,7 @@ function CostFormEditor({ accounts, form, setForm, onSave, onCancel, mode }: {
   mode: 'create' | 'edit'
 }) {
   return (
-    <div className="bg-panel border border-border rounded-lg p-4 mb-3 space-y-3">
+    <div className="glass-panel hover-lift border border-border rounded-lg p-4 mb-3 space-y-3">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
         <div>
           <label className="text-xs text-muted">Account (optional)</label>

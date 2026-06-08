@@ -9,7 +9,7 @@ export default function RecentTrades({ accountIds, limit = 8 }: { accountIds?: n
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accountIds?.join(','), limit])
   return (
-    <div className="bg-panel border border-border rounded-lg p-4">
+    <div className="bg-panel glass-panel hover-lift glass-panel hover-lift border border-border rounded-lg p-4">
       <div className="flex items-center justify-between mb-3">
         <div className="text-sm font-semibold">Recent Trades</div>
         <Link to="/trades" className="text-xs text-accent hover:underline">View all →</Link>
