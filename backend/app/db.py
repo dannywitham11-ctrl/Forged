@@ -5,9 +5,8 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 # Postgres by default; override via DATABASE_URL. The docker-compose db service
 # publishes 5433 on the host, so a local (non-docker) run hits the same port.
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL", "postgresql+psycopg://tz:tz_local_dev@localhost:5433/forge"
-)
+default_db = "sqlite:////tmp/dev.db" if os.environ.get("VERCEL") else "postgresql+psycopg://tz:tz_local_dev@localhost:5433/forge"
+DATABASE_URL = os.environ.get("DATABASE_URL", default_db)
 
 # SQLite (used by the no-Docker / packaged-.exe modes) serves requests from
 # FastAPI's threadpool, so connections cross threads — disable the same-thread

@@ -11,7 +11,7 @@ from ..tradeaccount_reader import parse_data_bytes, parse_data_file
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 
-UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/uploads")
+UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/tmp" if os.environ.get("VERCEL") else "/uploads")
 SIERRA_DATA_MOUNT = os.environ.get("SIERRA_DATA_PATH", "/sierra-data")
 
 

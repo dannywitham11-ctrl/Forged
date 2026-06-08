@@ -12,7 +12,7 @@ from ..services import insert_executions, rebuild_trades_for_account, store_uplo
 
 router = APIRouter(prefix="/api/uploads", tags=["uploads"])
 
-UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/uploads")
+UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/tmp" if os.environ.get("VERCEL") else "/uploads")
 
 
 @router.post("", response_model=schemas.UploadResult)

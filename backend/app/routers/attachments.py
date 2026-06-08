@@ -10,7 +10,7 @@ from ..db import get_db
 
 router = APIRouter(prefix="/api/trades", tags=["attachments"])
 
-UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/uploads")
+UPLOAD_DIR = os.environ.get("UPLOAD_DIR", "/tmp" if os.environ.get("VERCEL") else "/uploads")
 ATTACHMENT_DIR = os.path.join(UPLOAD_DIR, "attachments")
 
 

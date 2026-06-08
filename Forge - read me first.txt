@@ -1,0 +1,32 @@
+FORGE — Trading Journal (standalone app)
+========================================
+
+HOW TO RUN
+1. Double-click  Forge.exe
+2. A black window opens (that's the app running — leave it open).
+3. Your browser opens to the journal automatically.
+   If it doesn't, open your browser and go to:  http://localhost:8000
+4. To stop Forge, close the black window.
+
+That's it — no install, no Docker, no Python needed.
+
+FIRST TIME: WINDOWS SMARTSCREEN
+The app isn't code-signed, so Windows may show a blue
+"Windows protected your PC" box. This is normal for any new .exe.
+Click "More info" -> "Run anyway".
+
+YOUR DATA
+Everything you enter (accounts, trades, notes, uploads) is stored
+privately on THIS computer at:
+   C:\Users\<you>\AppData\Local\Forge
+It is not sent anywhere. Back it up by copying that folder.
+
+IMPORTING TRADES
+On the Upload page, drop a Sierra Chart Trade Activity Log (.txt)
+or a NinjaTrader Executions export (.csv). Accounts are created
+automatically; apply a prop-firm preset on the Prop Firms page.
+
+NOTES
+- Windows 64-bit only.
+- This is a personal/local app: each person who runs it has their
+  own separate journal and data. It is not a shared website.
