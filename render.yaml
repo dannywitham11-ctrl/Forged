@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: forged-backend
+    env: docker
+    region: ohio
+    plan: free
+    dockerContext: backend
+    dockerfilePath: backend/Dockerfile
+    disk:
+      name: sqlite-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:////app/data/dev.db
+      - key: UPLOAD_DIR
+        value: /app/data/_uploads
