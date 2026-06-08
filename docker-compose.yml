@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      UPLOAD_DIR: /uploads
+      CORS_ORIGINS: "*"
+      SIERRA_DATA_PATH: /sierra-data
+    volumes:
+      - ./data/uploads:/uploads
+      - ./backend/app:/app/app
+      # Optional: bind-mount your Sierra Chart Data folder for direct .scid import.
+      # Set SIERRA_DATA in .env to the absolute host path, or leave blank to disable.
+      - ${SIERRA_DATA:-./data/uploads/_sierra_unused}:/sierra-data:ro
+    ports:
+      - "${API_PORT}:8000"
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: ""        # relative /api/* so it works from any host
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "0.0.0.0:${WEB_PORT}:80"

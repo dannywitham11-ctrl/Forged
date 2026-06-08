@@ -1,0 +1,51 @@
+# ---- Secrets & local config (NEVER commit) ----
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.pfx
+
+# ---- Runtime / user data (DB, uploads, anything imported) ----
+data/
+sierra-data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv_local/
+.venv_check/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# ---- Node / Vite (frontend) ----
+node_modules/
+dist/
+.vite/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# ---- Build / packaging artifacts ----
+build/
+*.spec
+*.exe
+*.zip
+*.msi
+
+# ---- Editor / OS / tooling ----
+.vscode/
+.idea/
+.claude/
+*.swp
+*.bak
+.DS_Store
+Thumbs.db

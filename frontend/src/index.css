@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background-color: #0b0f17;
+  color: #e6ecf5;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+/* Bigger touch targets on phones */
+@media (max-width: 768px) {
+  button, [role="button"], input[type="checkbox"], input[type="radio"] {
+    min-height: 36px;
+  }
+  table { font-size: 12px; }
+}
+/* Prevent iOS auto-zoom on input focus (font-size >= 16px) */
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0b0f17; }
+::-webkit-scrollbar-thumb { background: #222b3d; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #2e3a52; }
+
+.num { font-variant-numeric: tabular-nums; font-family: 'JetBrains Mono', ui-monospace, monospace; }
