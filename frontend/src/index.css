@@ -6,10 +6,11 @@
 html, body, #root { height: 100%; }
 body {
   margin: 0;
-  background-color: #0b0f17;
-  color: #e6ecf5;
+  background-color: #0B0C10;
+  color: #F1F5F9;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
@@ -26,9 +27,34 @@ body {
   input, select, textarea { font-size: 16px !important; }
 }
 
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0b0f17; }
-::-webkit-scrollbar-thumb { background: #222b3d; border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: #2e3a52; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0B0C10; }
+::-webkit-scrollbar-thumb { background: #2A2E39; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #45A29E; }
 
 .num { font-variant-numeric: tabular-nums; font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* --- Modern UI Micro-Animations & Glass Effects --- */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(69, 162, 158, 0.15);
+}
+
+.glass-panel {
+  background: rgba(18, 20, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(42, 46, 57, 0.5);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
